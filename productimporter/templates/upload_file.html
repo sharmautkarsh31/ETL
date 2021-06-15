@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+{% csrf_token %}
+  <form action="https://s3.ap-south-1.amazonaws.com/product-storage-fulfil-assignment" method="post" enctype="multipart/form-data" id="upload-to-s3">
+    <input type="hidden"  name="key" value="1.csv" /><br />
+    <input type="hidden" name="acl" value="private" />
+    <input type="hidden"  name="Content-Type" value="binary/octet-stream" /><br />
+    <input type="hidden"   name="X-Amz-Credential" value="Atest" />
+    <input type="hidden"   name="X-Amz-Algorithm" value="test" />
+    <input type="hidden"   name="X-Amz-Date" value="test" />
+{#    <input type="hidden"   name="X-Amz-SignedHeaders" value="http://localhost:8000" />#}
+{#    <input type="hidden"   name="X-Amz-Expires" value="86400" />#}
+
+    <input type="hidden" name="Policy" value='test' />
+    <input type="hidden" name="X-Amz-Signature" value="test" />
+    File:
+    <input type="file"   name="file" id="file-upload" accept=".csv" /> <br />
+    <input type="submit" name="submit" value="Upload to Amazon S3" />
+  </form>
+
+
+{% endblock content %}
+
