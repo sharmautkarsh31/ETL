@@ -1,4 +1,4 @@
-release: python manage.py migrate
+release: python manage.py migrate || python manage.py createsuperuser --noinput
 web: gunicorn config.wsgi:application
 worker: celery worker --app=config.celery_app --loglevel=info
 beat: celery beat --app=config.celery_app --loglevel=info
