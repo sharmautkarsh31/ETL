@@ -329,6 +329,7 @@ productimporter/media/
 .ipython/
 .env
 .envs/*
-!.envs/.local/
 *.env
 temp/*
+
+.idea

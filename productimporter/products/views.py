@@ -19,6 +19,7 @@ from productimporter.products.models import Product
 from productimporter.utils.async_tasks import bulk_create_iter
 from productimporter.utils.helpers import generate_lazy_objs
 
+
 def process_csv_stream(request):
     file_id = request.GET.get('file_id','')
 

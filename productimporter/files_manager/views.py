@@ -13,13 +13,18 @@ from rest_framework.views import APIView
 
 from .models import FileItem
 from ..utils.csrf_exempt import CsrfExemptSessionAuthentication
-from ..utils.storages import create_presigned_upload_url
+from ..utils.storage import create_presigned_upload_url
 from django.shortcuts import render, redirect
 
 AWS_UPLOAD_BUCKET = settings.AWS_STORAGE_BUCKET_NAME
 AWS_UPLOAD_REGION = settings.AWS_S3_REGION_NAME
 AWS_UPLOAD_ACCESS_KEY_ID = settings.AWS_ACCESS_KEY_ID
 AWS_UPLOAD_SECRET_KEY = settings.AWS_SECRET_ACCESS_KEY
+from django.views.generic import TemplateView
+
+@csrf_exempt
+def my_view(request):
+    return TemplateView('Hello world')
 
 
 

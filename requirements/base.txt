@@ -29,3 +29,4 @@ awswrangler==2.8.0
 django-bulk-update-or-create==0.3.0
 django-filter==2.4.0
 # dask[complete]
+

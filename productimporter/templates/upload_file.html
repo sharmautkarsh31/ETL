@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block content %}
 {% csrf_token %}
@@ -15,9 +16,8 @@
     <input type="hidden" name="X-Amz-Signature" value="test" />
     File:
     <input type="file"   name="file" id="file-upload" accept=".csv" /> <br />
-    <input type="submit" name="submit" value="Upload to Amazon S3" />
+    <input type="submit" name="upload-s3-button" value="Upload to Amazon S3" class="upload-s3-button" />
   </form>
 
 
 {% endblock content %}
-

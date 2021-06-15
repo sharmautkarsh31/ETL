@@ -18,3 +18,7 @@
 /*  color: white;*/
 /*  text-align: center;*/
 /*}*/
+
+.upload-s3-button {
+  display: none;
+}

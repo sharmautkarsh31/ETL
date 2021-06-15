@@ -1,10 +1,14 @@
 var fileUploadInput = document.getElementById("file-upload");
 
-fileUploadInput.addEventListener("change", showFileName);
 var inputValues = {};
 var presignedUrl = '';
 var fileName = '';
 var fileItemId = ''
+
+window.addEventListener('DOMContentLoaded', (event) => {
+  fileUploadInput.addEventListener("change", showFileName);
+});
+
 function showFileName(e) {
   const file = fileUploadInput.files[0];
   fileName = file?.name;
@@ -24,6 +28,7 @@ function showFileName(e) {
         inputValues = fields;
         presignedUrl = url;
         fileItemId = file_item_id;
+        document.getElementsByName('upload-s3-button')[0].style['display']='inline';
         // fetch(presignedUrl, {
         //   method: "POST",
         //   body: file,
