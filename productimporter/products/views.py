@@ -43,7 +43,7 @@ def process_csv_stream(request):
         for df in dfs:
             lines_processed[0] += df.__len__()
             df = df.to_json()
-            bulk_create_iter.apply_async(args=(df,),ignore_result=False,)
+            bulk_create_iter.apply_async(args=(df,))
             yield "."
         # while current_app.tasks.keys():
         #     yield "."

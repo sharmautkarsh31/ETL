@@ -272,7 +272,8 @@ if USE_TZ:
     # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-timezone
     CELERY_TIMEZONE = TIME_ZONE
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-broker_url
-CELERY_BROKER_URL = env("REDIS_URL")
+CELERY_BROKER_URL = env("CELERY_BROKER_URL")
+# CELERY_BROKER_URL = env("REDIS_URL")
 # CELERY_BROKER_URL = "amqp://productimporter:productimporter@localhost:5672/productimporter_vhost"
 # http://docs.celeryproject.org/en/latest/userguide/configuration.html#std:setting-result_backend
 CELERY_RESULT_BACKEND = CELERY_BROKER_URL
@@ -349,5 +350,5 @@ AWS_S3_ADDRESSING_STYLE = "virtual"
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 
-CHUNKSIZE = int(env("CHUNKSIZE",default='70000'))
+CHUNKSIZE = int(env("CHUNKSIZE",default='10000'))
 

@@ -17,14 +17,6 @@ app.config_from_object("django.conf:settings", namespace="CELERY")
 
 # Load task modules from all registered Django app configs.
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
-#
-# i = app.control.inspect()
-#
-# def get_active_tasks():
-#     return i.active()
-#
-# def get_scheduled_tasks():
-#     return i.scheduled()
-#
-# def get_registered():
-#     return i.reserved()
+app.task_acks_late = True
+app.worker_prefetch_multiplier = 1
+
